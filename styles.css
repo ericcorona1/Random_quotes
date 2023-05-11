@@ -1,7 +1,19 @@
 :root {
+  --primary-color: hsl(251, 66%, 64%);
+  --hover: hsl(251, 35%, 37%);
+  font-size: 20px;
+  --fs-xl: clamp(2.5rem, 9vw + 1rem, 9rem);
+  --fs-l: clamp(0.85rem, 2vw + 0.5rem, 2.5rem);
+  --fs-600: 2rem;
+  --fs-500: 1.5rem;
+  --fs-400: 1rem;
+  --fs-xs
+  --line-height: 1.3em;
 }
 
-* {
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
 
@@ -12,9 +24,44 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  padding: 3em;
   margin: 0;
 }
 
 .box {
-    border: 1px solid black;
+  border: 1px solid black;
+  border-radius: 0.1em;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+.quote {
+  font-size: var(--fs-l);
+  text-align: center;
+}
+
+.author {
+    align-self: flex-end;
+    font-size: var(--fs-400);
+}
+
+.button-wrapper{
+  display: inherit;
+  justify-content: space-between;
+}
+
+.share-button{
+  background: var(--primary-color);
+  padding: 0.5em;
+  border-radius: 0.2em;
+  color: white;
+}
+
+.new-quote{
+  background: var(--primary-color);
+  border: none;
+  border-radius: 0.2em;
+  color: white;
 }
