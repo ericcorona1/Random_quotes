@@ -18,7 +18,7 @@
 }
 
 body {
-  background-color: #f9fafb;
+  background-color: var(--primary-color);
   font-family: "Open Sans", sans-serif;
   display: flex;
   align-items: center;
@@ -26,25 +26,28 @@ body {
   min-height: 100vh;
   padding: 3em;
   margin: 0;
+  transition: background-color 1000ms;
 }
 
 .box {
-  border: 1px solid black;
   border-radius: 0.1em;
   padding: 2em;
   display: flex;
   flex-direction: column;
   row-gap: 1em;
+  background-color: white;
 }
 
 .quote {
   font-size: var(--fs-l);
   text-align: center;
+  color: var(--primary-color);
 }
 
 .author {
     align-self: flex-end;
     font-size: var(--fs-xs);
+    color: var(--primary-color);
 }
 
 .button-wrapper{
