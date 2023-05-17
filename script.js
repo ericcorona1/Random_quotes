@@ -25,6 +25,17 @@ function changeColor() {
   rootElement.style.setProperty("--primary-color", selectedColor);
 }
 
+// Fade in Quote & Author
+function changeOpacity() {
+  quoteSection.style.opacity = 0;
+  authorSection.style.opacity = 0;
+
+  setTimeout(() => {
+    quoteSection.style.opacity = 1;
+  authorSection.style.opacity = 1;
+  }, 1400);
+}
+
 function generateQuote() {
   fetch("https://api.quotable.io/quotes/random")
     .then((res) => res.json())
@@ -43,7 +54,9 @@ function generateQuote() {
 generateButton.addEventListener("click", () => {
   generateQuote();
   changeColor();
+changeOpacity();
 });
 
 generateQuote();
 changeColor();
+changeOpacity();

@@ -26,7 +26,7 @@ body {
   min-height: 100vh;
   padding: 3em;
   margin: 0;
-  transition: background-color 1000ms;
+  transition: background-color 1000ms ease-in-out;
 }
 
 .box {
@@ -42,12 +42,16 @@ body {
   font-size: var(--fs-l);
   text-align: center;
   color: var(--primary-color);
+  transition: color 1000ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
 }
 
 .author {
     align-self: flex-end;
     font-size: var(--fs-xs);
     color: var(--primary-color);
+    transition: color 1000ms ease-in-out;
+    transition: opacity 400ms ease-in-out;
 }
 
 .button-wrapper{
@@ -60,6 +64,7 @@ body {
   padding: 0.2em;
   border-radius: 0.2em;
   color: white;
+  transition: background-color 1000ms ease-in-out;
 }
 
 .new-quote{
@@ -67,4 +72,5 @@ body {
   border: none;
   border-radius: 0.2em;
   color: white;
+  transition: background-color 1000ms ease-in-out;
 }
