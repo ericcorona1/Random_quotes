@@ -33,7 +33,7 @@ function changeOpacity() {
   setTimeout(() => {
     quoteSection.style.opacity = 1;
   authorSection.style.opacity = 1;
-  }, 1400);
+  }, 1300);
 }
 
 function generateQuote() {
