@@ -33,7 +33,7 @@ function changeOpacity() {
   setTimeout(() => {
     quoteSection.style.opacity = 1;
   authorSection.style.opacity = 1;
-  }, 1300);
+  }, 1000);
 }
 
 function generateQuote() {
@@ -52,11 +52,11 @@ function generateQuote() {
 
 // Event listener
 generateButton.addEventListener("click", () => {
-  generateQuote();
-  changeColor();
-changeOpacity();
+  changeOpacity();
+  setTimeout(generateQuote, 500);
+  setTimeout(changeColor, 500);
 });
 
-generateQuote();
-changeColor();
 changeOpacity();
+setTimeout(generateQuote, 500);
+setTimeout(changeColor, 500);
