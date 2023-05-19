@@ -59,7 +59,7 @@ body {
   justify-content: space-between;
 }
 
-.share-button{
+.twitter-share-button{
   background: var(--primary-color);
   padding: 0.2em;
   border-radius: 0.2em;

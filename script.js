@@ -1,6 +1,7 @@
 const quoteSection = document.getElementById("quote");
 const authorSection = document.getElementById("author");
 const generateButton = document.getElementById("generate");
+const twitterButton = document.getElementById("twitter-btn");
 const colorPalette = [
   "#16a085",
   "#27ae60",
@@ -21,7 +22,6 @@ const rootElement = document.querySelector(":root");
 function changeColor() {
   const randomColor = Math.floor(Math.random() * colorPalette.length);
   const selectedColor = colorPalette[randomColor];
-  console.log(selectedColor);
   rootElement.style.setProperty("--primary-color", selectedColor);
 }
 
@@ -29,33 +29,34 @@ function changeColor() {
 function changeOpacity() {
   quoteSection.style.opacity = 0;
   authorSection.style.opacity = 0;
-
+  
   setTimeout(() => {
     quoteSection.style.opacity = 1;
-  authorSection.style.opacity = 1;
+    authorSection.style.opacity = 1;
   }, 1000);
 }
 
 function generateQuote() {
   fetch("https://api.quotable.io/quotes/random")
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data[0].content);
-      console.log(data[0].author);
-      const quoteText = data[0].content;
+  .then((res) => res.json())
+  .then((data) => {
+    const quoteText = data[0].content;
       const quoteAuthor = data[0].author;
+      const formattedQuote = quoteText.replaceAll(' ', '%20');
+      const twitterLink = `https://twitter.com/intent/tweet?text=${formattedQuote}`;
 
+      twitterButton.href = twitterLink;
       quoteSection.innerText = '"' + quoteText + '"';
       authorSection.innerText = "- " + quoteAuthor;
     });
-}
+  }
 
-// Event listener
-generateButton.addEventListener("click", () => {
-  changeOpacity();
-  setTimeout(generateQuote, 500);
-  setTimeout(changeColor, 500);
-});
+  // Event listener
+  generateButton.addEventListener("click", () => {
+    changeOpacity();
+    setTimeout(generateQuote, 500);
+    setTimeout(changeColor, 500);
+  });
 
 changeOpacity();
 setTimeout(generateQuote, 500);
