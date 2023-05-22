@@ -42,8 +42,7 @@ function generateQuote() {
   .then((data) => {
     const quoteText = data[0].content;
       const quoteAuthor = data[0].author;
-      const formattedQuote = quoteText.replaceAll(' ', '%20');
-      const twitterLink = `https://twitter.com/intent/tweet?text=${formattedQuote}`;
+      const twitterLink = `https://twitter.com/intent/tweet?text="${quoteText}"%0A%0A- ${quoteAuthor}`;
 
       twitterButton.href = twitterLink;
       quoteSection.innerText = '"' + quoteText + '"';

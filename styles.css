@@ -64,7 +64,9 @@ body {
   padding: 0.2em;
   border-radius: 0.2em;
   color: white;
+  font-size: var(--fs-400);
   transition: background-color 1000ms ease-in-out;
+  text-decoration: none;
 }
 
 .new-quote{
@@ -73,4 +75,28 @@ body {
   border-radius: 0.2em;
   color: white;
   transition: background-color 1000ms ease-in-out;
+  font-size: var(--fs-400);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 350px) {
+  .button-wrapper{
+    flex-direction: column;
+  }
+
+  .button-wrapper > * {
+    padding: 0;
+  }
+
+  .new-quote{
+    margin-top: 1rem;
+  }
+
+  .twitter-share-button{
+    text-align: center;
+  }
+}
+
+img {
+  width: var(--fs-400);
 }
